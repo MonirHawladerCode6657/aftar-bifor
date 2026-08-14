@@ -1,0 +1,76 @@
+body{
+    user-select: none;
+    margin: 0;
+    padding: 0;
+   min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+@font-face {
+    font-family: mahbuba ;
+    src: url(./font/LiAlinurDristantoUnicode-Regular.ttf);
+}
+div{
+    font-family: mahbuba;
+    color: rgb(190, 194, 197);
+    padding: 20px 40px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 0;
+    background-color: aliceblue;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+div::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+  background-color: blue;
+  left: 0;
+  top: 0;
+    position: absolute;
+    z-index: -1;
+    border-radius: 10px;
+}
+div::before{
+    content: "";
+    background: linear-gradient(to left,rgb(0, 255, 21),red,rgb(0, 68, 255),rgb(212, 0, 255),rgb(0, 225, 255));
+  height: calc(100% + 20px) ;
+  width: calc(100% + 20px) ;
+  background-size: 600%;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+z-index: -1;
+animation: monir 5s;
+animation-timing-function:steps(5);
+animation-iteration-count: infinite;
+filter: blur(8px);
+opacity: calc(0);
+border-radius: 10px;
+
+}
+@keyframes monir {
+    0%{ background-position: 0 0;}
+    50%{ background-position: 400% 0;}
+   100%{ background-position: 0 0;}
+}
+div:hover::before{
+    opacity: calc(1);
+}
+div:active::after{
+    opacity: 0;
+}
+div:active::before{
+ filter: blur(0px);
+ height: calc(100% + 0px) ;
+  width: calc(100% + 0px) ;  
+   left: 0px;
+  top: 0px;
+}
+div:active{
+    color: black;
+}
